@@ -1,0 +1,89 @@
+table FactSalesOrder
+	lineageTag: edefee7c-30ef-432f-8864-556262976a0e
+	sourceLineageTag: [dbo].[FactSalesOrder]
+
+	column SalesOrderKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 34cc6a61-a01f-4093-8761-d77ce16ce478
+		sourceLineageTag: SalesOrderKey
+		summarizeBy: none
+		sourceColumn: SalesOrderKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column SalesOrderDateKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7d9090e8-6674-46d0-820f-1961224b6c0d
+		sourceLineageTag: SalesOrderDateKey
+		summarizeBy: none
+		sourceColumn: SalesOrderDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 175d3ac1-a4ba-4e24-8bc6-3d10e3adb9f1
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0489cb6f-6778-42ef-afe9-60fe966cd750
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		displayFolder: Measure
+		lineageTag: fb220ab5-f061-4991-8125-7d3c44bebb4c
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTotal
+		dataType: decimal
+		formatString: 0
+		sourceProviderType: decimal(18, 0)
+		displayFolder: Measure
+		lineageTag: f45309b6-80aa-415e-adfb-dd73f0081d9e
+		sourceLineageTag: SalesTotal
+		summarizeBy: sum
+		sourceColumn: SalesTotal
+
+		changedProperty = DataType
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactSalesOrder = entity
+		mode: directLake
+		source
+			entityName: FactSalesOrder
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

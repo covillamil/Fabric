@@ -1,0 +1,117 @@
+{
+  "schema_version": 63,
+  "tiles": [
+    {
+      "id": "87e04b22-814a-4844-9574-3239a8572351",
+      "title": "Dashboard de stock",
+      "visualType": "table",
+      "pageId": "2ddc98ad-700a-444b-a2c7-3f603cbfc76b",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "cc3e1556-c7ff-41f4-9350-761643f97ea8"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "f98c3c36-302f-4810-a1d9-cb14161b5457",
+      "title": "New tile",
+      "visualType": "table",
+      "pageId": "2ddc98ad-700a-444b-a2c7-3f603cbfc76b",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "315a246a-7f5f-44d7-a212-d59ecf1391a7"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "3620a9d5-e198-4aba-9a44-55546414e374",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "0e0bd739-a3d4-4146-a49c-f34e597efea8",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "2d02cbe1-ce04-be9c-4d30-de2494a588ed",
+      "name": "eventhousedemo",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "2ddc98ad-700a-444b-a2c7-3f603cbfc76b"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0e0bd739-a3d4-4146-a49c-f34e597efea8"
+      },
+      "text": "stock\n| take 100",
+      "id": "cc3e1556-c7ff-41f4-9350-761643f97ea8",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0e0bd739-a3d4-4146-a49c-f34e597efea8"
+      },
+      "text": "stock\n| count",
+      "id": "315a246a-7f5f-44d7-a212-d59ecf1391a7",
+      "usedVariables": []
+    }
+  ]
+}

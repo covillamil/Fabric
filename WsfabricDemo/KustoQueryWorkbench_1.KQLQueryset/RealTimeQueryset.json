@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "9d508a1c-f702-44d6-a13b-7cc7b0dd85e1",
+        "clusterUri": "",
+        "type": "Fabric",
+        "databaseItemId": "2d02cbe1-ce04-be9c-4d30-de2494a588ed",
+        "databaseItemName": "eventhousedemo"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "207b90c6-8666-498f-8fac-20eb51f84608",
+        "content": "stock\n| take 100\n\n\n",
+        "title": "Tab",
+        "dataSourceId": "9d508a1c-f702-44d6-a13b-7cc7b0dd85e1"
+      }
+    ]
+  }
+}

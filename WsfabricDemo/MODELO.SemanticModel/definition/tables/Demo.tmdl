@@ -1,0 +1,34 @@
+table Demo
+	lineageTag: 295f3cea-7a1f-4ea9-b5f3-d87b24c9e3bb
+	sourceLineageTag: [STG].[Demo]
+
+	column id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 39749eaf-1b63-412e-af16-640150b4722f
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		sourceProviderType: varchar(30)
+		lineageTag: 241666cb-1bca-4a2b-aec4-66f8b6301869
+		sourceLineageTag: Descripcion
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Demo = entity
+		mode: directLake
+		source
+			entityName: Demo
+			schemaName: STG
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

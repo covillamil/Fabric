@@ -1,0 +1,99 @@
+table DimDate
+	lineageTag: dabf8428-d754-4a76-9dff-4531dde3c2f1
+	sourceLineageTag: [dbo].[DimDate]
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7c83d750-cff7-4274-92d6-920160f2b470
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateAltKey
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0e0c25f0-9c36-4b66-8b07-316956c2fb42
+		sourceLineageTag: DateAltKey
+		summarizeBy: none
+		sourceColumn: DateAltKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f0275b37-e5c6-4df4-a2c1-133aad430414
+		sourceLineageTag: DayOfWeek
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekDayName
+		dataType: string
+		sourceProviderType: varchar(10)
+		lineageTag: a5fa47d0-9969-477a-bf43-68f089e52689
+		sourceLineageTag: WeekDayName
+		summarizeBy: none
+		sourceColumn: WeekDayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ed87f5fd-75e4-47a0-a56b-97942ecbe527
+		sourceLineageTag: DayOfMonth
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8f536aa3-d404-4b7b-a878-505d1bb138bc
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		sourceProviderType: varchar(12)
+		lineageTag: e55ffe2d-60e9-41c0-ac74-1b3e4ebc10d2
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f04c5f9d-286c-4565-bd72-1bbe29c7ff90
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDate = entity
+		mode: directLake
+		source
+			entityName: DimDate
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

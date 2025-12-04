@@ -1,0 +1,34 @@
+table dEMO2
+	lineageTag: 9c66f50b-5362-436c-8a83-0fd75c430300
+	sourceLineageTag: [STG].[dEMO2]
+
+	column id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9376594a-cc08-44d3-a2b8-c81d79e916f8
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		sourceProviderType: varchar(30)
+		lineageTag: 14f78c3f-9c4a-4b8c-8008-7876a5dd7634
+		sourceLineageTag: Descripcion
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dEMO2 = entity
+		mode: directLake
+		source
+			entityName: dEMO2
+			schemaName: STG
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

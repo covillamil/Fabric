@@ -1,0 +1,38 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "DemoDF2",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "18b437e4-6be6-4e60-a30d-7ad71be28924",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Sales": {
+      "queryId": "83cb9254-e848-46ef-a912-a9daa1fdca07",
+      "queryName": "Sales",
+      "loadEnabled": false
+    },
+    "Sales_DataDestination": {
+      "queryId": "b073cbf7-5033-44b5-afb7-0734d546ad05",
+      "queryName": "Sales_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://liondata-my.sharepoint.com/personal/covillamil_liondata_com_co/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"f94fd393-c17e-43a9-a399-89b8127e914d\",\"DatasourceId\":\"1656a325-a655-4698-a672-d12f9a92fd2e\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f94fd393-c17e-43a9-a399-89b8127e914d\",\"DatasourceId\":\"6d083dc0-6ef0-4515-8fd5-27be283d8f1b\"}"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+table DimCustomer
+	lineageTag: ba20e632-69e8-41ee-81ab-21b8fc89e591
+	sourceLineageTag: [dbo].[DimCustomer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c7a3d055-82fb-484c-91a0-7c82ae328304
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAltKey
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 5b1be5e1-76e9-4a7c-8599-e4a2bbd94b1c
+		sourceLineageTag: CustomerAltKey
+		summarizeBy: none
+		sourceColumn: CustomerAltKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		sourceProviderType: varchar(5)
+		lineageTag: 437ee3ef-66b2-4937-a913-5204aa4cb9d3
+		sourceLineageTag: Title
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: efaabcbf-d021-4095-97c5-f18874014620
+		sourceLineageTag: FirstName
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 16d4cd6e-0453-4a87-9402-3b48ba92baf4
+		sourceLineageTag: LastName
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		sourceProviderType: varchar(200)
+		lineageTag: 310cc985-10eb-496f-979c-7fe617be15f8
+		sourceLineageTag: AddressLine1
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 5310b277-bde1-4d16-8155-a57b7e129af1
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: af1d16cb-4bc4-4a7e-9322-5a27d676a568
+		sourceLineageTag: StateProvince
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 4ede32f5-adcf-4b58-a6a3-1a63fb92bc83
+		sourceLineageTag: CountryRegion
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(20)
+		lineageTag: 44828ddf-805e-43b7-b150-3bf558b37711
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
