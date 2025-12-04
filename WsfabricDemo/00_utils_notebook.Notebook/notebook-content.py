@@ -47,7 +47,7 @@ def calculate_revenue(df, qty_col="quantity", price_col="unit_price"):
     return df.withColumn("revenue", F.col(qty_col) * F.col(price_col))
 
 
-def say_hello(name: str) -> str:
+##def say_hello(name: str) -> str:
     """
     Función simple de ejemplo para probar desde otros notebooks.
     """
